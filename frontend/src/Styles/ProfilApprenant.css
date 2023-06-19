@@ -1,18 +1,24 @@
-.body{
-    display: flex;
-    margin-top: 0;
-    padding-top: 0;
-}
-.Profil{
-    flex: 1;
+.ProfilApprenant{
     display: flex;
     flex-direction: column;
-    height: 800px;
-    padding-top: 30px;
+    height: 1200px;
+  }
+.body{
+    display: flex;
+    flex: 0 0 83%;
+    margin-top: 0;
+    padding-top: 0;
+    width: 100%;
+}
+.Profil{
+    flex: 0 0 80%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
 }
 .vertical-div{
     flex:1;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     margin-left: 90px;
     margin-right: 90px;
     background-color: #f2f2f2;

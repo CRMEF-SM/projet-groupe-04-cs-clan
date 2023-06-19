@@ -1,18 +1,24 @@
+.CourApprenant{
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+}
 .body{
     display: flex;
+    flex: 0 0 83%;
     margin-top: 0;
     padding-top: 0;
+    width: 100%;
 }
 .Cours{
-    flex: 1;
+    flex: 0 0 80%;
     display: flex;
     flex-direction: column;
-    height: 800px;
     padding-top: 30px;
 
 }
 .Cours p{
-    margin-left: 80px;
+    margin-left: 7%;
     
 }
 .pMesCours{
@@ -26,17 +32,21 @@
     margin-bottom: 0;
     margin-top: 0;
 }
+.lineContainer{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 .horizontal-line {
     height: 1px;
+    width: 90%;
     background-color: black;
-    margin-left: 40px;
-    margin-right: 40px;
   }
   .guideContainer {
     display: flex;
-    height: 100px;
-    margin-left: 80px;
-    margin-right: 80px;
+    height: 15%;
+    margin-left: 7%;
+    margin-right: 7%;
     margin-top: 30px;
     
   }

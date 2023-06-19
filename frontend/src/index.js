@@ -5,11 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ProfilApprenant from './Components/ProfilApprenant';
 import CourApprenant from './Components/CourApprenant';
+import ActivitesApprenant from './Components/ActivitesApprenant';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ProfilApprenant />
+    <ActivitesApprenant />
   </React.StrictMode>
 );
 

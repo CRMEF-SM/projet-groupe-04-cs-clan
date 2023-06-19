@@ -17,7 +17,10 @@ function CourApprenant() {
         <div className="Cours">
           <p className="pMesCours">Mes cours</p>
           <p className="pProgrammationLogo">Programmation logo</p>
+          <div className="lineContainer">
           <hr className="horizontal-line" />
+          </div>
+          
           <div className="guideContainer">
             <div className="guideTitleContainer">
             <div className="circle">
