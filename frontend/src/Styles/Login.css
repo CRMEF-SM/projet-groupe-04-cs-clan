@@ -1,0 +1,42 @@
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+}
+.span{
+    color: #516e45;
+    font-size: 15px;
+    text-decoration: none;
+}
+.btn-login{
+    padding: 10px;
+    background-color: #638654;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.right-column{
+    gap:20px;
+}
+.img-turtle{
+    width: 460px;
+    align-self: start;
+}
+.creer-compte{
+    color: #58744d;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.login-text{
+    color: #fff;
+    opacity: 90%;
+    text-align: left;
+    width: 400px;
+    margin-bottom: 50px;
+}

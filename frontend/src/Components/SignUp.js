@@ -1,16 +1,30 @@
-import google_logo from "../images/google-logo.png";
-import facebook_logo from "../images/facebook-logo.png";
-import mail_logo from "../images/mail-logo.png";
+import google_logo from "../images/google-logo.png" ;
+import facebook_logo from "../images/facebook-logo.png" ;
+import mail_logo from "../images/mail-logo.png" ;
 import React, { useState } from 'react';
 import '../Styles/SignUp.css';
-
+import Login from './Login';
 const SignUp = () => {
+  const [showLogin, setShowLogin] = useState(false);
+  
+
+
   const [userType, setUserType] = useState('');
   const [showAdditionalFieldsApprenant, setShowAdditionalFieldsApprenant] = useState(false);
   const [showAdditionalFieldsEnseignant, setShowAdditionalFieldsEnseignant] = useState(false);
   const [day, setDay] = useState('');
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
+
+   
+  const handleToggleLogin = () => {
+    setShowLogin(true);
+  };
+
+  if (showLogin) {
+    return <Login />;
+  }
+
 
   const handleUserTypeChange = (type) => {
     setUserType(type);
@@ -57,7 +71,8 @@ const SignUp = () => {
           <>
             <h1 className="title">Rejoignez Code Turtle en tant que {userType}</h1>
             <div className="birthday-section">
-              <p className="birthday-text">Quelle est votre date de naissance ?</p>
+              <p className="birthday-text">Quelle est votre date de naissance ?
+</p>
               <div className="dropdowns-container">
                 <select value={day} onChange={handleDayChange}>
                   <option className="option-val" value="">Jour</option>
@@ -76,7 +91,7 @@ const SignUp = () => {
                   ))}
                 </select>
                 <select value={year} onChange={handleYearChange}>
-                  <option className="option-val" value="">Année</option>
+                  <option  className="option-val" value="">Année</option>
                   {Array.from({ length: 26 }, (_, index) => (
                     <option key={index} value={2023 - index}>
                       {2023 - index}
@@ -84,18 +99,20 @@ const SignUp = () => {
                   ))}
                 </select>
               </div>
+              <a href="#" className="a-compte-appr" onClick={handleToggleLogin}>  Vous avez déjà un compte ?</a>
               <a href="#" className="back-link" onClick={handleBackToSignUp}>
                 Précedent
               </a>
             </div>
+            
           </>
         ) : showAdditionalFieldsEnseignant ? (
           <>
             <h1 className="title">Rejoignez Code Turtle en tant que {userType}</h1>
             <div className="sign-up-options">
               <div className="sign-up-buttons">
-                <button className="btn-sign-up">
-                  <img className="logo_img" src={google_logo} alt="Google Logo" />
+                <button className="btn-sign-up" >
+                  <img  className="logo_img" src={google_logo} alt="Google Logo" />
                   Continue with Google
                 </button>
                 <button className="btn-sign-up">
@@ -103,20 +120,21 @@ const SignUp = () => {
                   Continue with Facebook
                 </button>
                 <button className="btn-sign-up">
-                  <img className="logo_img" src={mail_logo} alt="Mail Logo" />
+                  <img  className="logo_img" src={mail_logo} alt="Mail Logo" />
                   Continue with Mail
                 </button>
               </div>
+              <a href="#" className="a-compte-ens" onClick={handleToggleLogin}>  Vous avez déjà un compte ?</a>
               <div>
-                <a href="#" className="back-link" onClick={handleBackToSignUp}>
-                  Précedent
-                </a>
+              <a href="#" className="back-link" onClick={handleBackToSignUp}>
+                Précedent
+              </a>
               </div>
             </div>
           </>
         ) : (
           <>
-            <h1 className="title-v1">Rejoignez Code Turtle en tant que</h1>
+            <h1 className="title">Rejoignez Code Turtle en tant que</h1>
             <div className="btn">
               <button className="btn-1" onClick={() => handleUserTypeChange('Apprenant')}>
                 Apprenant
@@ -124,6 +142,7 @@ const SignUp = () => {
               <button className="btn-2" onClick={() => handleUserTypeChange('Enseignant')}>
                 Enseignant
               </button>
+              <a href="#" className="a-compte"  onClick={handleToggleLogin}>  Vous avez déjà un compte ?</a>
             </div>
           </>
         )}
