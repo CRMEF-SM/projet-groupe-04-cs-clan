@@ -7,6 +7,7 @@
     flex-direction: row;
     margin: 60px;
     width: 1100px;
+    height: auto;
     margin: 60px auto;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -15,9 +16,8 @@
     flex-direction: column;
     align-items: start;
     background-color: #8A9B6E;
-    width: 55%;
-    height: 500px;
-    padding: 40px 80px;
+    width: 50%;
+    padding: 40px 80px 100px 80px;
     border-radius: 5px 0px 0px 5px;
     box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
 }
@@ -44,7 +44,7 @@
     width: 45%;
     /* max-width: 400px; */
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
-    padding: 50px;
+    padding: 40px 80px 100px 80px;
     border-radius: 0px 5px 5px 0px;
     background-color: white;
     position: relative;
@@ -72,6 +72,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    
   }
   .a-compte{
     margin-top: 20px;
@@ -89,12 +90,12 @@
     gap: 10px;
     justify-content: center;
     align-items: center;
-    border: 2px solid #5b6d43;
-    border-radius: 10px;
+    border: 2px solid #8A9B6E;
+    border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     background-color: #8A9B6E;
-    color: #fff;
+    color: #ffffff;
   }
   /* Additional styles as needed */
   /* Add these styles to signUp.css */
@@ -107,14 +108,23 @@
   gap: 10px;
   margin-bottom: 20px;
   position: relative;
-  
+
 }
 select{
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 5px;
   font-size: 14px;
   color: #3e3f3d;
+  position: relative;
+  background-color: #ffffff;
+  border: 0.5px solid #47474777;
 }
+select option {
+
+}
+
+
+  
 .back-link {
   position: absolute;
   margin-top: 20px;
@@ -128,7 +138,7 @@ select{
 }
 .a-compte-appr{
   color: #4b6326;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .a-compte-ens{
   color: #4b6326;
@@ -149,7 +159,9 @@ select{
   align-items: center;
 }
 .birthday-text{
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: -20px;
 }
 .sign-up-options{
 
@@ -161,6 +173,7 @@ select{
   display: flex;
   flex-direction: column;
   gap: 15px;
+  ;
   
 }
 .btn-sign-up{
@@ -174,6 +187,7 @@ select{
  color: #3e3f3d;
  font-weight: bold;
  cursor: pointer;
+ border: 1px solid #404140
 }
 .btn-sign-up:hover{
   background-color: #8a9b6e79;
@@ -182,4 +196,7 @@ select{
   width: 22px;
   height: 22px;
   margin-right: 85px;
+}
+span{
+
 }
