@@ -846,3 +846,76 @@ window.TogetherJSConfig ={
   }
 
 };
+
+// Import the gpt-2-simple library
+const gpt2 = require('gpt-2-simple');
+
+// Load the GPT-2 model
+async function loadModel() {
+  await gpt2.loadGPT2();
+  console.log('Model loaded successfully!');
+}
+
+// Generate a response using GPT-2
+async function generateGPT2Response(userMessage) {
+  const response = await gpt2.generate(userMessage, {
+    temperature: 0.7,
+    maxTokens: 50,
+    numOutputs: 1
+  });
+  return response[0];
+}
+
+// Function to generate a response based on user input
+async function generateBotResponse(userMessage) {
+
+  // Check if the user's message matches an activity name
+  const activityName = userMessage.toLowerCase().trim();
+  if (activities.hasOwnProperty(activityName)) {
+    return activities[activityName];
+  }
+
+  // Generate a response using GPT-2
+  const gpt2Response = await generateGPT2Response(userMessage);
+  return gpt2Response;
+}
+
+function sendMessage() {
+  var userInput = document.getElementById("user-input");
+  var userMessage = userInput.value;
+
+  if (userMessage.trim() !== "") {
+    displayMessage(userMessage, "user-message");
+
+    // Call a function to get the description of the activity based on its name
+    var activityDescription = getActivityDescription(userMessage);
+
+    // Display the activity description from the bot
+    displayMessage(activityDescription, "bot-message");
+
+    userInput.value = "";
+  }
+}
+
+function displayMessage(message, className) {
+  var chatMessages = document.getElementById("chat-messages");
+  var messageElement = document.createElement("div");
+  messageElement.innerText = message;
+  messageElement.classList.add("chat-message");
+  messageElement.classList.add(className);
+  chatMessages.appendChild(messageElement);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function getActivityDescription(activityName) {
+  // Implement your logic here to retrieve the description of the activity based on its name
+  // You can use a database or any other data source to store activity information
+
+  var activities = {
+    "activity1": "Bonjour, je suis Logo et je peux t'aider à réaliser de superbes choses. Permets-moi tout d'abord de te faire découvrir l'environnement et de t'expliquer : la boîte à droite est ma boîte de dessin. Au centre de la boîte de dessin, tu peux trouver la tortue. Tu peux contrôler la tortue à l'aide de commandes Logo. Avec ces commandes, tu peux utiliser la tortue pour dessiner de magnifiques formes. Tu saisis les commandes Logo dans la boîte située en dessous de la boîte de dessin, également appelée boîte de commande. Pour commencer à saisir des instructions, clique sur la souris à l'intérieur de la boîte de commande. Pour répéter les commandes précédentes, utilise les touches fléchées haut / bas du clavier. La première commande que tu apprendras permet de déplacer la tortue vers l'avant. Cette commande s'appelle simplement forward suivie d'un nombre. Le nombre indique la distance parcourue par la tortue vers l'avant. Essayons : Écris la commande forward 50",
+    "activity2": "Description of activity 2",
+    "activity3": "Description of activity 3"
+  };
+
+  return activities[activityName.toLowerCase()] || "Sorry, I don't have information about that activity.";
+}
