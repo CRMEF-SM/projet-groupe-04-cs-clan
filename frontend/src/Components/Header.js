@@ -1,11 +1,12 @@
 import '../Styles/Header.css'
 import { FaSearch } from 'react-icons/fa';
+import logo from "../images/tortueIcon.png";
 
 function Header() {
   return (
     <div className="Header">
        <div className="navbar-logo">
-        <img src="../images/tortueIcon.png"/>
+        <img src={logo}/>
         <p>Code turtle</p>
       </div>
       <div className="navbar-buttons">

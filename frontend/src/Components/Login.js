@@ -66,10 +66,18 @@ import mail_logo from "../images/mail-logo.png" ;
 import '../Styles/Login.css';
 import '../Styles/SignUp.css';
 import contact_turtle from "../images/contact_turtle.png";
+import SignUp from './SignUp';
 const Login = ({ handleBackToSignUp }) => {
+  const [showSignUp, setShowSignUp] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const handleToggSignUp = () => {
+      setShowSignUp(true);
+    };
   
+    if (showSignUp) {
+      return <SignUp />;
+    }
     const handleEmailChange = (event) => {
       setEmail(event.target.value);
     };
@@ -130,12 +138,9 @@ const Login = ({ handleBackToSignUp }) => {
             Se connecter
           </button>
         </form>
-        <a href="#" className="creer-compte" >  Créer un compte </a>
+        <a href="#" className="creer-compte" onClick={handleToggSignUp}>  Créer un compte </a>
 
-      {/* "Retour à l'inscription" link */}
-      <a href="#" className="back-link" onClick={handleBackToSignUp}>
-        Retour à l'inscription
-      </a>
+      
     </div>
     </div>
   );
