@@ -1,0 +1,377 @@
+/* General Styles */
+
+@import url(https://fonts.googleapis.com/css?family=Michroma);
+
+
+
+/* Overall Page Structure */
+
+
+
+#display-panel {
+  position: absolute;
+  top: 180px;
+  bottom: 80px;
+}
+.multi #display-panel {
+  bottom: 50px;
+}
+
+#input-panel {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+}
+.multi #input-panel {
+  height: 150px;
+}
+
+
+#display-panel, #input-panel {
+  left: 750px; right: 10px;
+}
+
+[dir=rtl] #topbar, [dir=rtl] #display-panel, [dir=rtl] #input-panel {
+  right: 0; left: 400px;
+}
+
+
+#sidebar-header {
+  position: absolute;
+  width: 0px;
+  top: 0px;
+  height: 0px;
+}
+#sidebar {
+  position: absolute;
+  width: 0px;
+  top: 120px;
+  bottom: 0;
+  overflow: hidden;
+}
+#sidebar-header, #sidebar {
+  left: auto; right: 0;
+}
+[dir=rtl] #sidebar-header, [dir=rtl] #sidebar {
+  right: auto; left: 0;
+}
+
+.panel {
+  overflow: hidden;
+}
+
+.inner {
+  position: absolute;
+  margin: 0; padding: 0;
+  left: 0; right: 0; top: 0; bottom: 0;
+  overflow: hidden;
+}
+
+
+
+
+.snippet pre {
+  white-space: pre-wrap;
+  margin-top: 0px; margin-bottom: 5px;
+  padding: 2px;
+  background-color: #ffffff;
+}
+.snippet pre:hover {
+  background-color: white;
+}
+
+#links ul { padding-left: 20px; }
+#links ul li { margin-bottom: 5px; }
+
+
+
+/* Graphical and Textual Display */
+
+#display {
+  position: absolute;
+  overflow: hidden;
+  top: 5px; bottom: 5px;
+  border: 1px solid rgb(0, 195, 65);
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  left: 10px; right: 5px;
+}
+[dir=rtl] #display {
+  right: 10px; left: 5px;
+}
+
+#display #error {
+  position: absolute;
+  padding: 3px 20px;
+  bottom: 0;
+  border-radius: 1px;
+
+  font-size: 14pt;
+  font-weight: bold;
+  color: white;
+  background-color: #e01010;
+  display: none;
+  z-index: 9999;
+  left: 0; right: auto;
+}
+[dir=rtl] #display #error {
+  right: 0; left: auto;
+}
+
+#display #error.shown {
+  display: block;
+}
+
+#sandbox {
+  position: absolute;
+  z-index: 0;
+}
+
+#sandbox span {
+  /* Error in case of no canvas */
+  color: red; background-color: yellow; font-weight: bold;
+}
+
+#turtle {
+  position: absolute; z-index: 1;
+}
+
+#overlay {
+  left: 0; top: 0; right: 0; bottom: 0;
+  padding: 10px;
+  margin: 0;
+  position: absolute;
+  z-index: 2;
+  background-color: transparent;
+  overflow: hidden;
+  white-space: pre-wrap;
+  font-family: Monospace;
+}
+
+/* User Input */
+
+#input {
+  position: absolute;
+  overflow: hidden;
+  top: 5px; bottom: 10px;
+  border: 1px solid rgb(0, 195, 65);
+  border-radius: 2px;
+  color: black;
+  background-color: white;
+  left: 10px; right: 85px;
+}
+[dir=rtl] #input {
+  right: 10px; left: 85px;
+}
+
+
+#logo-cm-multi-line,
+#logo-cm-single-line,
+#logo-ta-single-line,
+#logo-ta-multi-line {
+  position: absolute;
+  overflow: hidden;
+  left: 0; top: 0; right: 0; bottom: 0;
+  font-family: monospace;
+  display: none;
+}
+
+.single #logo-cm-single-line,
+.single #logo-ta-single-line,
+.multi #logo-cm-multi-line,
+.multi #logo-ta-multi-line {
+  display: block;
+}
+
+.CodeMirror .CodeMirror-placeholder { color: gray; font-style: italic; }
+
+#logo-cm-single-line .CodeMirror-hscrollbar,
+#logo-cm-single-line .CodeMirror-vscrollbar { visibility: hidden; }
+
+#logo-cm-single-line.CodeMirror {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+}
+
+.single #logo-cm-single-line,
+.single #logo-ta-single-line {
+  font-size: 12pt;
+  display: block;
+}
+
+#input #toggle {
+  cursor: pointer;
+
+  position: absolute;
+  overflow: hidden;
+  z-index: 1000;
+  top: 1px;
+  width: 20px; height: 20px;
+  text-shadow: 0 0 1px black;
+  left: auto; right: 1px;
+}
+[dir=rtl] #input #toggle {
+  right: auto; left: 1px;
+}
+.single #toggle #collapse-label { display: none; }
+.multi  #toggle #expand-label { display: none; }
+
+#run, #stop, #clear {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  position: absolute;
+  border: 1px solid rgb(0, 195, 65);
+  border-radius: 2px;
+  background-color: white;
+}
+
+#run, #stop {
+  top: 5px; bottom: 35px; width: 70px;
+}
+
+#run, #stop {
+  top: 5px; bottom: 35px; width: 70px;
+}
+
+#run { display: block; }
+#stop { display: none; }
+.running #run { display: none; }
+.running #stop { display: block; }
+
+#clear {
+  height: 19px; bottom: 10px; width: 70px;
+}
+
+#run, #stop, #clear {
+  right: 5px; left: auto;
+}
+[dir=rtl] #run, [dir=rtl] #clear, [dir=rtl] #stop {
+  left: 5px; right: auto;
+}
+
+#run:hover, #clear:hover, #stop:hover {
+  background-color: #ffffff;
+}
+
+#run .label, #clear .label, #stop .label {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+  height: 20px;
+  text-align: center;
+  display: block;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  #topbar-links { display: none; }
+}
+@media only screen and (max-width: 800px) {
+  #topbar, #display-panel, #input-panel {
+    left: 0; right: 200px;
+  }
+  [dir=rtl] #topbar, [dir=rtl] #display-panel, [dir=rtl] #input-panel {
+    right: 0; left: 200px;
+  }
+  #sidebar-header, #sidebar { width: 200px;; }
+  .linkdesc { display: none; }
+}
+
+@media only screen and (max-width: 600px) {
+  #topbar, #display-panel, #input-panel {
+    left: 0; right: 0;
+  }
+  [dir=rtl] #topbar, [dir=rtl] #display-panel, [dir=rtl] #input-panel {
+    right: 0; left: 0;
+  }
+  #sidebar-header, #sidebar { display: none; }
+  #topbar-altlinks { display: inline-block; }
+
+  #topbar h1 { font-size: 14pt; }
+  #topbar { height: 28px; }
+  #display-panel { top: 28px; }
+}
+
+@media only screen and (max-width: 420px) {
+  #run, #stop { height: auto; bottom: 10px; }
+  #clear { display: none; }
+}
+
+.navbar-title {
+  font-size: 14px;
+}
+
+/* CSS styling for the chatbot container */
+.chatbot-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid rgb(0, 195, 65);
+  background-color: #f1ffdd;
+  position: absolute;
+  width: 655px;
+  height: 480px;
+  left: 15px;
+  top: 160px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CSS styling for chat messages */
+.chat-message {
+  margin-bottom: 10px;
+  clear: both;
+  overflow: auto;
+}
+
+/* CSS styling for user messages */
+.user-message {
+  color: #007bff;
+  text-align: left;
+  float: left;
+}
+
+/* CSS styling for bot messages */
+.bot-message {
+  color: #28a745;
+}
+
+/* CSS styling for user input container */
+.user-input-container {
+  margin-top: auto;
+  text-align: right;
+  height: 40px; /* Set the height of the user input container */
+}
+
+/* CSS styling for user input */
+#user-input {
+  height: 100%;
+  width: calc(100% - 60px); /* Adjust the width to accommodate the button */
+  padding: 5px;
+  background-color: white;
+  color: black;
+  border: 1px solid #4CAF50;
+}
+
+/* CSS styling for send button */
+#send-button {
+  background-color: white;
+  color: black;
+  border: 1px solid #4CAF50;
+  
+}
+.chatbot-title {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+  left: 15px;
+  top: 140px;
+}
+
+
